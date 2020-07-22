@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Portfolio{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {{ encore_entry_link_tags('app') }}
     </head>
     <body>
     {% include '_navbar.html.twig' %}
