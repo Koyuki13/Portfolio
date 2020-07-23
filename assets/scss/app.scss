@@ -1,8 +1,28 @@
 @import "vars";
 
+h1, h2, h3 {
+  font-family: $font-title;
+}
+
+p {
+  font-family: $font-text;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  font-family: $font-nav;
+  color: $light-color;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  font-family: $font-nav;
+  color: $light-color;
+}
+
 .home {
-  background-image: url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-  background-size: 100%;
+  background-image: url('/build/portfolio_background.jpg');
+  background-size: cover;
+  height: 655px;
 }
 
 

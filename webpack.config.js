@@ -25,6 +25,8 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addStyleEntry('home', './assets/scss/home.scss')
+    .addStyleEntry('login', './assets/scss/login.scss')
+    // .addEntry('images/portfolio_background', './assets/images/portfolio_background.jpg')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
