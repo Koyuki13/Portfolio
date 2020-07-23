@@ -3,11 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Constraints\DateTime;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use DateTime;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
@@ -43,7 +46,9 @@ class Project
     private $description;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime")
+     *
+     * @var DateTimeInterface|null
      */
     private $updatedAt;
 
@@ -55,7 +60,7 @@ class Project
     /**
      * @ORM\Column(nullable=true)
      * @Vich\UploadableField(
-     *     mapping = "images_project",
+     *     mapping = "products",
      *     fileNameProperty = "picture",
      * )
      * @var File
@@ -91,18 +96,6 @@ class Project
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
 
         return $this;
     }

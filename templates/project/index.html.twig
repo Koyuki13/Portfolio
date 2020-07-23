@@ -10,8 +10,6 @@
             <tr>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>UpdatedAt</th>
-                <th>Images</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +17,6 @@
             <tr>
                 <td>{{ project.name }}</td>
                 <td>{{ project.description }}</td>
-                <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ project.picture }}</td>
                 <td>
                     <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
                     <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
