@@ -10,9 +10,11 @@
     <header class="home">
     {% include '_navbar.html.twig' %}
 
-        {% block javascripts %}{% endblock %}
+
     </header>
     {% block body %}{% endblock %}
-
+    {% block javascripts %}
+        <script src="https://kit.fontawesome.com/fc2e3a10bb.js" crossorigin="anonymous"></script>
+    {% endblock %}
     </body>
 </html>

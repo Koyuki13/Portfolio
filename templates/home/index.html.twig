@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %} Portfolio {% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('home') }}
 {% endblock %}
@@ -7,9 +9,17 @@
 {% block body %}
 
     <h1 class="text-center mt-4">DEVELOPPEUSE WEB/ WEB MOBILE</h1>
+    <div class="text-center">
+        <i class="fa fa-github" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    </div>
+
     <div>
-
-
+        <h2 class="text-center mt-4" id="Contacter">Me contacter</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-dark mb-4 m-4">Envoyer</button>
+        {{ form_end(form) }}
     </div>
 
 
