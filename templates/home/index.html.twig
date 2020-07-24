@@ -7,26 +7,41 @@
 {% endblock %}
 
 {% block body %}
+    <main>
+        <h1 class="text-center mt-4">DEVELOPPEUSE WEB/ WEB MOBILE</h1>
+        <div class="text-center">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </div>
 
-    <h1 class="text-center mt-4">DEVELOPPEUSE WEB/ WEB MOBILE</h1>
-    <div class="text-center">
-        <i class="fa fa-github" aria-hidden="true"></i>
-        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-    </div>
+        <div>
+            <h2 class="text-center mt-4">PORTFOLIO</h2>
+            <div class="wrap">
+                <div class="tile">
+                    {% for project in projects %}
+                    <img src="{{ asset('build/loireorleans.png') }}" alt="logo_{{ project.name }}">
+                    <div class="text">
+                        <h3 class="animate-text">Loire et Orléans</h3>
+                        <p class="animate-text">{{ project.description }}</p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div>
-        <h2 class="text-center mt-4">PORTFOLIO</h2>
-        <img src="build/loireetorleans" alt="loire et orleans">
-
-    </div>
-
-    <div>
-        <h2 class="text-center mt-4" id="Contacter">Me contacter</h2>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button class="btn btn-dark mb-4 m-4">Envoyer</button>
-        {{ form_end(form) }}
-    </div>
+        <div>
+            <h2 class="text-center mt-4" id="Contacter">Me contacter</h2>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-dark mb-4 m-4">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </main>
 
 
 {% endblock %}
