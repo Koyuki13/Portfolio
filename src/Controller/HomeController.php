@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 /**
  * Class HomeController
@@ -26,20 +27,26 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $email = (new TemplatedEmail())
+                ->from('your_email@example.com')
+                ->to('your_email@example.com')
+                ->subject('Un nouveau message vient d\'arriver!')
+
+                // path of the Twig template to render
+                ->htmlTemplate('home/email/notifications.html.twig')
+
+                // pass variables (name => value) to the template
+                ->context([
+                    'data' => $data,
+                ])
+            ;
+            $mailer->send($email);
             $entityManager = $this->getDoctrine()->getManager();
 
 
             return $this->redirectToRoute('home');
         }
-
-        $email = (new Email())
-            ->from('your_email@example.com')
-            ->to('your_email@example.com')
-            ->subject('Un nouveau message vient d\'arriver !')
-            ->html('<p>Un nouveau message vient d\'arriver !</p>');
-
-
-        $mailer->send($email);
 
         return $this->render("home/index.html.twig", [
             'form' => $form->createView(),

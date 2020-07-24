@@ -1,81 +1,31 @@
-<body>
-<div style="">
+<html lang="fr">
+<head>
+    <style>
+        body {
+            font-size: 16px;
+        }
+        th,
+        td {
+            padding-right: 24px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .order-table {
+            padding: 16px 0;
+        }
+    </style>
+</head>
 
-    <div style="margin:0px auto;max-width:600px;margin-bottom:10px">
-        <div style="line-height:0;font-size:0;">
-            <table align="center" background="" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                   style="width:100%;">
-                <tbody>
-                <tr>
-                    <td style="background:#BDAC91;direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-                        <div class="mj-column-px-400 mj-outlook-group-fix"
-                             style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                            <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                   style="vertical-align:top;" width="100%">
-                                <tr>
-                                    <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                        <div style="font-family:Helvetica Neue;font-size:40px;line-height:3;text-align:center;color:#161311;">
-                                            <h5>un nouveau message est disponible dans votre espace.</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" vertical-align="middle"
-                                        style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                               style="border-collapse:separate;line-height:100%;">
-                                            <tr>
-                                                <td align="center" bgcolor="#161311" role="presentation"
-                                                    style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#161311;"
-                                                    valign="middle"><a href="{{ path('app_login') }}"
-                                                                       style="display:inline-block;background:#161311;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;"
-                                                                       target="_blank">
-                                                        Accéder a votre Espace
-                                                    </a></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div style="background:#161311;background-color:#161311;margin:0px auto;max-width:600px;">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
-               style="background:#161311;background-color:#161311;width:100%;">
-            <tbody>
-            <tr>
-                <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-                    <div class="mj-column-px-400 mj-outlook-group-fix"
-                         style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                               style="vertical-align:top;" width="100%">
-                            <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                    <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
-                                        Les Ambassadeurs
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" vertical-align="middle"
-                                    style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                           style="border-collapse:separate;line-height:100%;">
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-</body>
+<h1>Bienvenue vous avec un nouveau message de {{ data.name }}!</h1>
 
-</html>
+<p>
+   Message:
+    {{ data.message }}
+</p>
+<h3>Coordonnées</h3>
+<ul>
+    <li>{{ data.name }}</li>
+    <li>{{ data.email }}</li>
+    <li>{{ data.telephone }}</li>
+</ul>
