@@ -36,7 +36,7 @@ class HomeController extends AbstractController
             ->from('your_email@example.com')
             ->to('your_email@example.com')
             ->subject('Un nouveau message vient d\'arriver !')
-            ->html('<p>Une nouvelle série vient d\'être publiée sur Wild Séries !</p>');
+            ->html('<p>Un nouveau message vient d\'arriver !</p>');
 
 
         $mailer->send($email);

@@ -15,20 +15,21 @@
         </div>
 
         <div>
-            <h2 class="text-center mt-4">PORTFOLIO</h2>
+            <h2 class="text-center mt-4" id="PORTFOLIO">PORTFOLIO</h2>
             <div class="wrap">
                 <div class="tile">
                     {% for project in projects %}
+{#                    <img src="{{ asset(project.picture is defined ? 'uploads/project' ~ project.picture : 'build/images/placeholder.png') }}">#}
                     <img src="{{ asset('build/loireorleans.png') }}" alt="logo_{{ project.name }}">
                     <div class="text">
                         <h3 class="animate-text">Loire et Orléans</h3>
                         <p class="animate-text">{{ project.description }}</p>
+                        {% endfor %}
                         <div class="dots">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
             </div>
