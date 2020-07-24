@@ -1,0 +1,31 @@
+<html lang="fr">
+<head>
+    <style>
+        body {
+            font-size: 16px;
+        }
+        th,
+        td {
+            padding-right: 24px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .order-table {
+            padding: 16px 0;
+        }
+    </style>
+</head>
+
+<h1>Bienvenue vous avec un nouveau message de {{ data.name }}!</h1>
+
+<p>
+   Message:
+    {{ data.message }}
+</p>
+<h3>Coordonnées</h3>
+<ul>
+    <li>{{ data.name }}</li>
+    <li>{{ data.email }}</li>
+    <li>{{ data.telephone }}</li>
+</ul>
