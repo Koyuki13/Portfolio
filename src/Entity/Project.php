@@ -46,24 +46,20 @@ class Project
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var DateTimeInterface|null
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var DateTime|null
      */
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string")
+     * @var string|null
      */
     private $picture;
 
     /**
-     * @ORM\Column(nullable=true)
-     * @Vich\UploadableField(
-     *     mapping = "products",
-     *     fileNameProperty = "picture",
-     * )
-     * @var File
+     * @Vich\UploadableField(mapping = "project", fileNameProperty = "picture")
+     * @var File|null
      * @Assert\File(
      *     mimeTypes = {"image/jpg", "image/jpeg", "image/png"},
      *     mimeTypesMessage = "Veuillez insérer un fichier au format {{ types }} "
@@ -100,16 +96,26 @@ class Project
         return $this;
     }
 
+    public function getUpdatedAt(): ?DateTime
+    {
+        return $this->updatedAt;
+    }
+    public function setUpdatedAt(DateTime $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     public function getPicture(): ?string
     {
         return $this->picture;
     }
 
-    public function setPicture( ?string $picture): self
+    public function setPicture( ?string $picture): void
     {
         $this->picture = $picture;
 
-        return $this;
     }
 
     /**
@@ -124,10 +130,10 @@ class Project
      * @param File $pictureFile
      * @return Project
      */
-    public function setPictureFile(File $pictureFile): Project
+    public function setPictureFile(File $pictureFile = null)
     {
         $this->pictureFile = $pictureFile;
-        if ($this !== null) {
+        if ($pictureFile) {
             $this->updatedAt = new DateTime('now');
         }
         return $this;
