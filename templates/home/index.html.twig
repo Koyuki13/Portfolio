@@ -20,7 +20,8 @@
                 <div class="tile">
                     {% for project in projects %}
 {#                    <img src="{{ asset(project.picture is defined ? 'uploads/project' ~ project.picture : 'build/images/placeholder.png') }}">#}
-                    <img src="{{ asset('build/loireorleans.png') }}" alt="logo_{{ project.name }}">
+{#                    <img src="{{ vich_uploader_asset(picture, 'pictureFile')}}" alt="{{ picture.name }}">#}
+{#                    <img src="{{ asset('build/loireorleans.png') }}" alt="logo_{{ project.name }}">#}
                     <div class="text">
                         <h3 class="animate-text">Loire et Orléans</h3>
                         <p class="animate-text">{{ project.description }}</p>
